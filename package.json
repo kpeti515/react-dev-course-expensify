@@ -5,6 +5,8 @@
   "author": "Lorand Kallai",
   "license": "MIT",
   "scripts": {
+    "start": "node server/server.js",
+    "heroku-postbuild":"yarn run build-prod",
     "serve": "live-server public/",
     "build-dev": "webpack",
     "build-prod": "webpack -p --env production",
@@ -23,6 +25,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
+    "express": "^4.17.1",
     "live-server": "^1.2.1",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
