@@ -18,13 +18,13 @@ exports[`should renderExpenselistItem with fixture data 1`] = `
     className="expenseAmount"
   >
     Amount :
-    195
+    1,95 HUF
   </p>
   <p
     className="expenseCreatedAt"
   >
     Created at: 
-    0
+    1970 January 1st
   </p>
 </div>
 `;
