@@ -1,7 +1,8 @@
 import expensesReducer from "../../reducers/expenses";
 import expenses from '../fixtures/expenses'
+import { act } from "react-test-renderer";
 
-test('shouuld set default state', () => {
+test('should set default state', () => {
   const state = expensesReducer(undefined, {type: '@@INIT'})
   expect(state).toEqual([])
 })
@@ -24,7 +25,7 @@ test('Should not remove expense by false ID', () => {
   expect(state).toStrictEqual(expenses)
 })
 
-test('shoud add an expense', () => {
+test('should add an expense', () => {
   const expense = {
     id: '109',
     description: 'Laptop',
@@ -64,4 +65,13 @@ test('should edit an expense', () => {
   }
   const state = expensesReducer(expenses, action)
   expect(state).toStrictEqual(expenses)
+})
+
+test('should set expenses', () => {
+  const action = {
+    type: 'SET_EXPENSES',
+    expenses: [expenses[1]]
+  }
+  const state = expensesReducer(expenses, action)
+  expect(state).toStrictEqual([expenses[1]])
 })

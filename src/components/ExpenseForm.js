@@ -1,8 +1,10 @@
 import React from 'react'
 import moment from 'moment'
+import localization from 'moment/locale/hu'
 import { SingleDatePicker } from 'react-dates'
 import 'react-dates/initialize'
 
+moment().locale("hu", localization)
 export default class ExpenseForm extends React.Component {
   constructor(props){
     super(props)
