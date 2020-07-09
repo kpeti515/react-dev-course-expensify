@@ -1,7 +1,6 @@
 import{v4 as uuid} from 'uuid'
 import 'firebase/analytics';
 // import 'firebase/database'
-process.env.NODE_ENV === 'test' || firebase.analytics()
 import database from '../firebase/firebase'
 
 // ADD EXPENSE
