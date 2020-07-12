@@ -4,35 +4,35 @@ import moment from 'moment';
 import numeral from 'numeral'
 numeral.register('locale', 'hu', {
   delimiters: {
-      thousands: ' ',
-      decimal: ','
+    thousands: ' ',
+    decimal: ','
   },
   abbreviations: {
-      thousand: 'K',
-      million: 'M',
-      billion: 'B',
-      trillion: 'T'
+    thousand: 'K',
+    million: 'M',
+    billion: 'B',
+    trillion: 'T'
   },
-  ordinal : function (number) {
-      return number === 1 ? 'er' : 'ème';
+  ordinal: function (number) {
+    return number === 1 ? 'er' : 'ème';
   },
   currency: {
-      symbol: 'HUF'
+    symbol: 'HUF'
   }
 });
 numeral.locale('hu');
 // itt miért nem kell már props.expenses.descr/amount/createdAt hanem elég a props.descr.???
 export const ExpenseListItem = ({ id, description, amount, createdAt }) => (
-  <div 
-  className="expense"
-  >
-    <Link to={`edit/${id}`}>
-    <h3 className="expenseDescription">Item: {description}</h3>
-    </Link>
-    <p className="expenseAmount">Amount :{numeral(amount/100).format('0,0[.]00 $')}</p>
-    <p className="expenseCreatedAt">Created at: {moment(createdAt).format('YYYY MMMM Do')}</p>
-    
-  </div>
+  <Link to={`edit/${id}`} className="list-item">
+    <div>
+      <h3 className="list-item__title">Item: {description}</h3>
+      <span className="list-item__sub-title">Created at: {moment(createdAt).format('YYYY MMMM Do')}</span>
+    </div>
+    <h3 className="list-item__data">Amount :{numeral(amount / 100).format('0,0[.]00 $')}</h3>
+
+
+
+  </Link>
 )
 
 export default ExpenseListItem
