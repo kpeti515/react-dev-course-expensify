@@ -24,7 +24,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "core-js": "3",
     "css-loader": "^3.5.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^7.15.5",
     "google-auth-library": "6.x",
     "history": "4.7.2",
